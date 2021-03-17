@@ -1,0 +1,54 @@
+:root{
+
+/* couleurs définies */
+
+--primary-color: #831B17;   
+
+--secondary-color:  #F0D584;
+
+--light: #F0D584;
+
+--dark: #831B17;
+
+--bannerColor: #282846;
+
+--bannerTextColor: #ffffff;
+
+/* partie non faite */
+
+--shadow-color: #;
+
+--spacing: 8px;
+
+--spacing-2: calc(var(--spacing) * 2);
+
+--spacing-4: calc(var(--spacing) * 4);
+
+--main-font: arial;
+
+--title-font: impact;
+
+
+--text-font-size: 16pt;
+
+--title-font-size: 24pt;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  font-family: var(--main-font);
+
+}
+
+
+
+
+
+
+
+
+
