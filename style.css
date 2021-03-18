@@ -200,7 +200,15 @@ p {
   padding: var(--spacing);
   text-align: center;
   margin: 2% 40%;
+  background-color: #831b17;
+  color: var(--bannerTextColor);
 }
+
+.formSet input[type="submit"]:focus {
+  background-color: var(--bannerColor);
+}
+
+/* Styles for Footer */
 
 footer {
   background-color: var(--bannerColor);
@@ -219,8 +227,38 @@ footer {
   margin-top: var(--spacing);
 }
 
+.footerCopyright {
+  margin-top: 10px;
+  font-weight: var(--bold);
+}
+
+.footerContact p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.footerContact p:first-child {
+  margin-top: var(--spacing);
+}
+
 .footerIcon img {
   max-width: 50px;
   max-height: 50px;
   margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Responsivity settings for form and footer */
+  .formSet input[type="submit"] {
+    max-width: 150px;
+    padding: var(--spacing);
+    text-align: center;
+    margin: var(--spacing-2) var(--spacing-2) var(--spacing-2) 0px;
+  }
+
+  .footerIcon img {
+    max-width: 30px;
+    max-height: 30px;
+    margin-top: 10px;
+  }
 }
