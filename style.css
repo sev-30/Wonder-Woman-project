@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap');
+
+
 :root{
 
     /* couleurs définies */
@@ -29,7 +32,8 @@
     --text-font-size: 16pt;
     
     --title-font-size: 24pt;
-    
+    /* Thuy - Declare a variable of which value is the height of navigateur that can be used for calculating the height of sections */
+    --nav-height: 80px;
     }
     
     
@@ -38,22 +42,17 @@
       margin: 0;
     
       font-family: var(--main-font);
+
     
     }
-    
     .container {
-    
       width: calc(100% - var(--spacing-4));
     
-      max-width:800px;
-    
-      margin:auto;
-    
+      max-width: 800px;      
     }
     
-    
     h1 {
-    
+      
       font-size: var(--title-font-size);
     
       font-family: var(--title-font);
@@ -66,3 +65,195 @@
       font-size:var(--text-font-size);
     
     }
+
+
+/* Style for menu - Thuy   */  
+*{
+  box-sizing: border-box;
+  
+}
+.containerHeader{
+  width:100%;
+  padding: var(--spacing-4) 10%;
+  display: flex;
+  position: fixed;
+  top:0;
+  height: var(--nav-height);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bannerColor);
+}
+.menu-items ul{
+  float:right;
+}
+.menu-items li{
+  display: inline-block;
+  list-style: none;
+  padding:var(--spacing-2);
+ 
+}
+.menu-items a {
+  transition: 0.4s;
+  color: var(--bannerTextColor);
+  font-family: var(--text-font);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: var(--nav-height);
+}
+
+.menu-items a:hover {
+  background-color: var(--secondary-color);
+  color: var(--bannerColor);
+  padding: var(--spacing-4) var(--spacing-2);
+  font-size: 14pt;
+}
+
+.logo img {
+  width: calc(var(--nav-height)*1.2);
+}
+
+.menu-burger,
+.close{
+  display: none;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .containerHeader{
+    padding: var(--spacing-2) 5%;
+  }
+  .menu-burger {
+      display: block;
+  }
+  .menu-burger a{
+    color: var(--bannerTextColor);
+    text-decoration: none;
+    font-size: calc(var(--text-font-size)*1.2);
+    font-weight: 600;
+  }
+  .menu-items {
+      display: none;
+  }
+  .menu-items:target {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: fixed;
+    font-size: var(--text-font-size);
+    background-color: var(--bannerColor);
+    opacity:0.95;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;    
+  }
+  .menu-items ul{
+    margin-left: -10%;
+    margin-right: var(--spacing-2);
+}
+  .menu-items li:not(:last-child){
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px ;
+    width:100%;
+    text-align: center;
+    padding: 0;
+    margin:var(--spacing);
+     
+  }
+  .close{
+    display:block;
+    margin-right:  10%;    
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: var(--title-font-size);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .menu-items li{
+  padding:var(--spacing);
+  margin:auto 0;
+  } 
+}
+/*STYLE for the title and background image - Thuy*/
+
+.backgroundImage{
+  margin-top: var(--nav-height);
+  background: url("images/backgroundImgAccueil.jpg");
+  height: calc(var(--nav-height)*10);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+color:var(--light);
+font-weight: bold;
+text-transform: uppercase;
+text-align: center;
+font-size: 20pt;
+line-height: 50px;
+}
+
+/*STYLE for section About Me - Thuy*/
+#aboutMe{
+  background-color: var(--secondary-color);
+}
+
+.aboutMe{
+  width: 80%;
+  margin:auto;
+  height: calc(var(--nav-height)*8);
+  padding:var(--spacing-4);
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+  border-radius: var(--spacing);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .2);
+}
+
+.photoProfile{
+  width:calc(var(--nav-height)*5);
+  height: calc(var(--nav-height)*5);
+  background: url('images/image.webp');
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float:left;
+  shape-outside: circle();
+  margin:30px 30px 30px 0 ;
+}
+.aboutMe h2{
+  color: var(--primary-color);
+  text-align: center;
+}
+.aboutMe p{
+  color: var(--dark);
+  line-height: 24px;
+  font-size: var(--text-font);
+}
+
+
+@media screen and (max-width: 768px) {
+  .aboutMe{
+    width: 90%;
+    height: calc(var(--nav-height)*12);
+    display: grid;
+    grid-template-rows: 50px 300px 300px;
+    gap:30px;
+  }
+  .photoProfile{
+    width:calc(var(--nav-height)*3.5);
+    height: calc(var(--nav-height)*3.5);
+    margin:auto;
+    float:none;
+  }
+  .aboutMe p{
+    text-align: justify;
+  }
+  .hidden{
+    display: none;
+  }
+} 
