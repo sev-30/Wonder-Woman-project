@@ -8,7 +8,7 @@
     
     --title-font: "calson";
       
-    --text-font: "futura round";
+    --text-font: "Futura";
       
     --primary-color: #831B17;   
     
@@ -37,6 +37,7 @@
     --nav-height: 80px;
     }
     
+
     
     body {
     
@@ -51,21 +52,80 @@
     
       max-width: 800px;      
     }
+
+
+    .myWorkExperience
+    {
+      background-color: var( --primary-color);
+
+    }
     
+
+
+
+       /* Affichage reposnisive Joel pour la partie Experience */
+@media screen and (min-width: 900px) {
+  .flexBoxContainerExperiences
+        {
+          display:flex;
+          flex-direction: row;
+          justify-content:space-around;
+        }
+}
+@media  screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles pour cette Media Queries */
+  .flexBoxContainerExperiences
+      {
+        display:flexbox;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+      }
+  }
+
+    .myWorkExperience h2, h3
+    {
+      text-align: center;
+      color: var(--light);
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+    }
+
+
+    .myWorkExperience figcaption
+    {
+      color: var(--light);
+      font-size: var(---text-font-size);
+      font-family: var(--title-font);
+    }
+.conteneurRubriqueExperience
+{
+  text-align: center;
+}
+    .flexBoxContainerExperiences .experience{
+
+      height: 100%;
+      width:100;
+      }
+   
+
+
+
     h1 {
       
       font-size: var(--title-font-size);
-    
       font-family: var(--title-font);
-    
     }
+
+
     
     
     p {
-    
       font-size:var(--text-font-size);
-    
     }
+
+    
+ 
 
 
 /* Style for menu - Thuy   */  
