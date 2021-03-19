@@ -1,99 +1,100 @@
 :root{
 
-    /* couleurs définies */
+  /* couleurs définies */
+  
+  --title-font: "calson";
     
-    --title-font: "calson";
-      
-    --text-font: "futura round";
-      
-    --primary-color: #831B17;   
+  --text-font: "futura round";
     
-    --secondary-color:  #F0D584;
-    
-    --light: #F0D584;
-    
-    --dark: #831B17;
-    
-    --bannerColor: #282846;
-    
-    --bannerTextColor: #ffffff;
-    
-    /* partie non faite */
-    
-    --spacing: 8px;
-    
-    --spacing-2: calc(var(--spacing) * 2);
-    
-    --spacing-4: calc(var(--spacing) * 4);
-    
-    --text-font-size: 16pt;
-    
-    --title-font-size: 24pt;
-    
-    }
-    
-    
-    body {
-    
-      margin: 0;
-    
-      font-family: var(--main-font);
-    
-    }
-    
-    .container {
-    
-      width: calc(100% - var(--spacing-4));
-    
-      max-width:800px;
-    
-      margin:auto;
-    
-    }
-    
-    
-    h1 {
-    
-      font-size: var(--title-font-size);
-    
-      font-family: var(--title-font);
-    
-    }
-    
-    
-    p {
-    
-      font-size:var(--text-font-size);
-    
-    }
-    
-    
-    .skills {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    
-    .skill {
-        display: flex;
-        align-items: center;
-        width: 400px; 
-    }
+  --primary-color: #831B17;   
+  
+  --secondary-color:  #F0D584;
+  
+  --light: #F0D584;
+  
+  --dark: #831B17;
+  
+  --bannerColor: #282846;
+  
+  --bannerTextColor: #ffffff;
+  
+  /* partie non faite */
+  
+  --spacing: 8px;
+  
+  --spacing-2: calc(var(--spacing) * 2);
+  
+  --spacing-4: calc(var(--spacing) * 4);
+  
+  --text-font-size: 12pt;
+  
+  --title-font-size: 24pt;
+  
+  }
+  
+  
+  body {
+  
+    margin: 0;
+  
+    font-family: var(--main-font);
+  
+  }
+  
+  .container {
+  
+    width: calc(100% - var(--spacing-4));
+  
+    max-width:800px;
+  
+    margin:auto;
+  
+  }
+  
+  
+  h1 {
+  
+    font-size: var(--title-font-size);
+  
+    font-family: var(--title-font);
+  
+  }
+  
+  
+  p {
+  
+    font-size:var(--text-font-size);
+  
+  }
+  
+  #skills {
+      background-color:  var(--secondary-color);
+      color: var(--dark);
+  }
+  
+  .talents {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      shape-outside: circle();
+  }
+  
+  .talent {
+      display: flex;
+      align-items: top;
+      width: 350px; 
+  }
 
-    .skill-text {
-        text-align: justify;
-    }
+  .talent-text {
+      text-align: justify;
+  }
 
-    .skill img {
-       width: 200px;
-       height: 150px;
-       object-fit: cover;
-       border-radius: 50%;
-       float:left;
-       shape-outside: circle();
-       margin:10px;
-       object-fit: cover;
-       object-position: top;
-       
-    }
-   
+  .talent img {
+     width: 150px;
+     height: 150px;
+     object-fit: cover;
+     border-radius: 50%;
+     float:left;
+     shape-outside: circle();
+  }
+ 
