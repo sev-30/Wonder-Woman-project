@@ -4,35 +4,105 @@
 
 :root{
 
-    /* couleurs définies */
+  /* couleurs définies */
+  
+  --title-font: "calson";
     
-    --title-font: "calson";
+  --text-font: "futura round";
+    
+  --primary-color: #831B17;   
+  
+  --secondary-color:  #F0D584;
+  
+  --light: #F0D584;
+  
+  --dark: #831B17;
+  
+  --bannerColor: #282846;
+  
+  --bannerTextColor: #ffffff;
       
-    --text-font: "Futura";
-      
-    --primary-color: #831B17;   
+  /* partie non faite */
+  
+  --spacing: 8px;
+  
+  --spacing-2: calc(var(--spacing) * 2);
+  
+  --spacing-4: calc(var(--spacing) * 4);
+  
+  --text-font-size: 16pt;
+  
+  --title-font-size: 24pt;
+  
+  }
+  
+ 
+  body {
+  
+    margin: 0;
+  
+    font-family: var(--main-font);
+  
+  }
+  
+  .container {
+  
+    width: calc(100% - var(--spacing-4));
+  
+    max-width:800px;
+  
+    margin:auto;
+  
+  }
+  
+  
+  h1 {
+  
+    font-size: var(--title-font-size);
+  
+    font-family: var(--title-font);
+  
+  }
+  
+  
+  p {
+  
+    font-size:var(--text-font-size);
+  
+  }
+  
+
+/* CSS Assset part of Sév */
+  #assets {
+    background-color:  var(--dark);
+    color: var(--light);
+  }
+  
+  .weapons {
+    display: flex;
+    color: var(--light);
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .weapon {
+    width:350px;
+    display: flex;
+    align-items: center;
+  }
+
+  .weapon-text {
+    text-align: left;
+  }
+
+  .weapon img {
+    object-fit: cover;
+    object-position: top;
+    width:200px;
+    height:120px;
+  }
+ 
     
-    --secondary-color:  #F0D584;
-    
-    --light: #F0D584;
-    
-    --dark: #831B17;
-    
-    --bannerColor: #282846;
-    
-    --bannerTextColor: #ffffff;
-    
-    /* partie non faite */
-    
-    --spacing: 8px;
-    
-    --spacing-2: calc(var(--spacing) * 2);
-    
-    --spacing-4: calc(var(--spacing) * 4);
-    
-    --text-font-size: 16pt;
-    
-    --title-font-size: 24pt;
     /* Thuy - Declare a variable of which value is the height of navigateur that can be used for calculating the height of sections */
     --nav-height: 80px;
     }
