@@ -1,36 +1,423 @@
-:root {
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap');
+
+
+:root{
+
   /* couleurs définies */
-
+  
   --title-font: "calson";
-
+    
   --text-font: "futura round";
-
-  --primary-color: #831b17;
-
-  --secondary-color: #f0d584;
-
-  --light: #f0d584;
-
-  --dark: #831b17;
-
+    
+  --primary-color: #831B17;   
+  
+  --secondary-color:  #F0D584;
+  
+  --light: #F0D584;
+  
+  --dark: #831B17;
+  
   --bannerColor: #282846;
-
+  
   --bannerTextColor: #ffffff;
-
+      
   /* partie non faite */
-
+  
   --spacing: 8px;
-
+  
   --spacing-2: calc(var(--spacing) * 2);
-
+  
   --spacing-4: calc(var(--spacing) * 4);
-
+  
   --text-font-size: 16pt;
-
+  
   --title-font-size: 24pt;
+  
+  }
+  
+ 
+  body {
+  
+    margin: 0;
+  
+    font-family: var(--main-font);
+  
+  }
+  
+  .container {
+  
+    width: calc(100% - var(--spacing-4));
+  
+    max-width:800px;
+  
+    margin:auto;
+  
+  }
+  
+  
+  h1 {
+  
+    font-size: var(--title-font-size);
+  
+    font-family: var(--title-font);
+  
+  }
+  
+  
+  p {
+  
+    font-size:var(--text-font-size);
+  
+  }
+  
 
-  --bold: bold;
+/* CSS Assset part of Sév */
+  #assets {
+    background-color:  var(--dark);
+    color: var(--light);
+  }
+  
+  .weapons {
+    display: flex;
+    color: var(--light);
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .weapon {
+    width:350px;
+    display: flex;
+    align-items: center;
+  }
+
+  .weapon-text {
+    text-align: left;
+  }
+
+  .weapon img {
+    object-fit: cover;
+    object-position: top;
+    width:200px;
+    height:120px;
+  }
+ 
+    
+    /* Thuy - Declare a variable of which value is the height of navigateur that can be used for calculating the height of sections */
+    --nav-height: 80px;
+    }
+    
+
+    
+    body {
+    
+      margin: 0;
+    
+      font-family: var(--main-font);
+
+    
+    }
+    .container {
+      width: calc(100% - var(--spacing-4));
+    
+      max-width: 800px;      
+    }
+
+
+    .myWorkExperience
+    {
+      background-color: var( --primary-color);
+
+    }
+    
+
+
+
+       /* Affichage reposnisive Joel pour la partie Experience */
+@media screen and (min-width: 900px) {
+  .flexBoxContainerExperiences
+        {
+          display:flex;
+          flex-direction: row;
+          justify-content:space-around;
+        }
 }
+@media  screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles pour cette Media Queries */
+  .flexBoxContainerExperiences
+      {
+        display:flexbox;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+      }
+  }
+
+    .myWorkExperience h2, h3
+    {
+      text-align: center;
+      color: var(--light);
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+    }
+
+
+    .myWorkExperience figcaption
+    {
+      color: var(--light);
+      font-size: var(---text-font-size);
+      font-family: var(--title-font);
+    }
+.conteneurRubriqueExperience
+{
+  text-align: center;
+}
+    .flexBoxContainerExperiences .experience{
+
+      height: 100%;
+      width:100;
+      }
+   
+
+
+
+    h1 {
+      
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+    }
+
+
+    
+    
+    p {
+      font-size:var(--text-font-size);
+    }
+    
+    
+    .skills {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .skill {
+        display: flex;
+        align-items: center;
+        width: 400px; 
+    }
+
+    .skill-text {
+        text-align: justify;
+    }
+
+    .skill img {
+       width: 200px;
+       height: 150px;
+       object-fit: cover;
+       border-radius: 50%;
+       float:left;
+       shape-outside: circle();
+       margin:10px;
+       object-fit: cover;
+       object-position: top;
+       
+    }
+   
+
+
+/* Style for menu - Thuy   */  
+*{
+  box-sizing: border-box;
+  
+}
+.containerHeader{
+  width:100%;
+  padding: var(--spacing-4) 10%;
+  display: flex;
+  position: fixed;
+  top:0;
+  height: var(--nav-height);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bannerColor);
+}
+.menu-items ul{
+  float:right;
+}
+.menu-items li{
+  display: inline-block;
+  list-style: none;
+  padding:var(--spacing-2);
+ 
+}
+.menu-items a {
+  transition: 0.4s;
+  color: var(--bannerTextColor);
+  font-family: var(--text-font);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: var(--nav-height);
+}
+
+.menu-items a:hover {
+  background-color: var(--secondary-color);
+  color: var(--bannerColor);
+  padding: var(--spacing-4) var(--spacing-2);
+  font-size: 14pt;
+}
+
+.logo img {
+  width: calc(var(--nav-height)*1.2);
+}
+
+.menu-burger,
+.close{
+  display: none;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .containerHeader{
+    padding: var(--spacing-2) 5%;
+  }
+  .menu-burger {
+      display: block;
+  }
+  .menu-burger a{
+    color: var(--bannerTextColor);
+    text-decoration: none;
+    font-size: calc(var(--text-font-size)*1.2);
+    font-weight: 600;
+  }
+  .menu-items {
+      display: none;
+  }
+  .menu-items:target {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: fixed;
+    font-size: var(--text-font-size);
+    background-color: var(--bannerColor);
+    opacity:0.95;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;    
+  }
+  .menu-items ul{
+    margin-left: -10%;
+    margin-right: var(--spacing-2);
+}
+  .menu-items li:not(:last-child){
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px ;
+    width:100%;
+    text-align: center;
+    padding: 0;
+    margin:var(--spacing);
+     
+  }
+  .close{
+    display:block;
+    margin-right:  10%;    
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: var(--title-font-size);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .menu-items li{
+  padding:var(--spacing);
+  margin:auto 0;
+  } 
+}
+/*STYLE for the title and background image - Thuy*/
+
+.backgroundImage{
+  margin-top: var(--nav-height);
+  background: url("images/backgroundImgAccueil.jpg");
+  height: calc(var(--nav-height)*10);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+color:var(--light);
+font-weight: bold;
+text-transform: uppercase;
+text-align: center;
+font-size: 20pt;
+line-height: 50px;
+}
+
+/*STYLE for section About Me - Thuy*/
+#aboutMe{
+  background-color: var(--secondary-color);
+}
+
+.aboutMe{
+  width: 80%;
+  margin:auto;
+  height: calc(var(--nav-height)*8);
+  padding:var(--spacing-4);
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+  border-radius: var(--spacing);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .2);
+}
+
+.photoProfile{
+  width:calc(var(--nav-height)*5);
+  height: calc(var(--nav-height)*5);
+  background: url('images/image.webp');
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float:left;
+  shape-outside: circle();
+  margin:30px 30px 30px 0 ;
+}
+.aboutMe h2{
+  color: var(--primary-color);
+  text-align: center;
+}
+.aboutMe p{
+  color: var(--dark);
+  line-height: 24px;
+  font-size: var(--text-font);
+}
+
+
+@media screen and (max-width: 768px) {
+  .aboutMe{
+    width: 90%;
+    height: calc(var(--nav-height)*12);
+    display: grid;
+    grid-template-rows: 50px 300px 300px;
+    gap:30px;
+  }
+  .photoProfile{
+    width:calc(var(--nav-height)*3.5);
+    height: calc(var(--nav-height)*3.5);
+    margin:auto;
+    float:none;
+  }
+  .aboutMe p{
+    text-align: justify;
+  }
+  .hidden{
+    display: none;
+  }
+} 
+
+ 
 
 html,
 body,
@@ -119,23 +506,6 @@ video {
   font: inherit;
   vertical-align: baseline;
   font-family: var(--main-font);
-}
-
-.container {
-  width: calc(100% - var(--spacing-4));
-
-  max-width: 800px;
-
-  margin: auto;
-}
-
-h1 {
-  font-size: var(--title-font-size);
-  font-family: var(--title-font);
-}
-
-p {
-  font-size: var(--text-font-size);
 }
 
 /* Style from Form */
@@ -261,3 +631,4 @@ footer {
     margin-top: 10px;
   }
 }
+
