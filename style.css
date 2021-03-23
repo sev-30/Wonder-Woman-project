@@ -1,100 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap');
+
+
 :root{
 
-  /* couleurs définies */
-  
-  --title-font: "calson";
+    /* couleurs définies */
     
-  --text-font: "futura round";
+    --title-font: "calson";
+      
+    --text-font: "futura round";
+      
+    --primary-color: #831B17;   
     
-  --primary-color: #831B17;   
+    --secondary-color:  #F0D584;
+    
+    --light: #F0D584;
+    
+    --dark: #831B17;
+    
+    --bannerColor: #282846;
+    
+    --bannerTextColor: #ffffff;
+    
+    /* partie non faite */
+    
+    --spacing: 8px;
+    
+    --spacing-2: calc(var(--spacing) * 2);
+    
+    --spacing-4: calc(var(--spacing) * 4);
+    
+    --text-font-size: 16pt;
+    
+    --title-font-size: 24pt;
+    /* Thuy - Declare a variable of which value is the height of navigateur that can be used for calculating the height of sections */
+    --nav-height: 80px;
+    }
+    
+    
+    body {
+    
+      margin: 0;
+
+    
+    }
+    .container {
+      padding: 2%;
+      margin: auto;
+      max-width: 1100px; 
+      box-shadow: 4px 0 4px -4px rgba(31, 73, 125, 0.8), -4px 0 4px -4px rgba(31, 73, 125, 0.8);   
+    }
+    
+    h1 {
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+    
+    
+    p {
+    
+      font-size:var(--text-font-size);
+    
+    }
+
+
+/* Style for menu - Thuy   */  
+*{
+  box-sizing: border-box;
   
-  --secondary-color:  #F0D584;
+}
+.containerHeader{
+  width:100%;
+  padding: var(--spacing-4) 10%;
+  display: flex;
+  position: fixed;
+  top:0;
+  height: var(--nav-height);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bannerColor);
+  z-index: 1;
+}
+.menu-items ul{
+  float:right;
+}
+.menu-items li{
+  display: inline-block;
+  list-style: none;
+  padding:var(--spacing-2);
+ 
+}
+.menu-items a {
+  transition: 0.4s;
+  color: var(--bannerTextColor);
+  font-family: var(--text-font);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: var(--nav-height);
+}
+
+.menu-items a:hover {
+  background-color: var(--secondary-color);
+  color: var(--bannerColor);
+  padding: var(--spacing-4) var(--spacing-2);
+  font-size: 14pt;
+}
+
+.logo img {
+  width: calc(var(--nav-height)*1.2);
+}
+
+.menu-burger,
+.close{
+  display: none;
   
-  --light: #F0D584;
-  
-  --dark: #831B17;
-  
-  --bannerColor: #282846;
-  
-  --bannerTextColor: #ffffff;
-  
-  /* partie non faite */
-  
-  --spacing: 8px;
-  
-  --spacing-2: calc(var(--spacing) * 2);
-  
-  --spacing-4: calc(var(--spacing) * 4);
-  
-  --text-font-size: 12pt;
-  
-  --title-font-size: 24pt;
-  
+}
+
+@media screen and (max-width: 768px) {
+  .containerHeader{
+    padding: var(--spacing-2) 5%;
   }
-  
-  
-  body {
-  
-    margin: 0;
-  
-    font-family: var(--main-font);
-  
+  .menu-burger {
+      display: block;
   }
-  
-  .container {
-  
-    width: calc(100% - var(--spacing-4));
-  
-    max-width:800px;
-  
-    margin:auto;
-  
+  .menu-burger a{
+    color: var(--bannerTextColor);
+    text-decoration: none;
+    font-size: calc(var(--text-font-size)*1.2);
+    font-weight: 600;
   }
-  
-  
-  h1 {
-  
+  .menu-items {
+      display: none;
+  }
+  .menu-items:target {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: fixed;
+    font-size: var(--text-font-size);
+    background-color: var(--bannerColor);
+    opacity:0.95;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;    
+  }
+  .menu-items ul{
+    margin-left: -10%;
+    margin-right: var(--spacing-2);
+}
+  .menu-items li:not(:last-child){
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px ;
+    width:100%;
+    text-align: center;
+    padding: 0;
+    margin:var(--spacing);
+     
+  }
+  .close{
+    display:block;
+    margin-right:  10%;    
+    position: absolute;
+    top: 0;
+    right: 0;
     font-size: var(--title-font-size);
-  
-    font-family: var(--title-font);
-  
   }
-  
-  
-  p {
-  
-    font-size:var(--text-font-size);
-  
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .menu-items li{
+  padding:var(--spacing);
+  margin:auto 0;
+  } 
+}
+/*STYLE for the title and background image - Thuy*/
+
+.backgroundImage{
+  margin-top: var(--nav-height);
+  background: url("images/backgroundImgAccueil.jpg");
+  height: calc(var(--nav-height)*10);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+color:var(--light);
+font-weight: bold;
+text-transform: uppercase;
+text-align: center;
+font-size: 30pt;
+line-height: 50px;
+text-shadow: 5px 5px 10px var(--dark), 5px 5px 1em var(--dark), 5px 5px 1em var(--dark);
+}
+
+/*STYLE for section About Me - Thuy*/
+#aboutMe{
+  background-color: var(--secondary-color);
+}
+
+.aboutMe{
+  width: 1100px;
+  margin:auto;
+  height: calc(var(--nav-height)*8);
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+  border-radius: var(--spacing);
+  box-shadow: 4px 2px 4px -4px rgba(31, 73, 125, 0.8), -4px 0 8px -4px rgba(31, 73, 125, 0.8);
+}
+
+.photoProfile{
+  width:calc(var(--nav-height)*5);
+  height: calc(var(--nav-height)*5);
+  background: url('images/image.webp');
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float:left;
+  shape-outside: circle();
+  padding: auto var(--spacing-4) ;
+  margin: 50px;
+}
+.aboutMe h2{
+  color: var(--primary-color);
+  text-align: center;
+  padding-top: 50px;
+}
+.aboutMe p{
+  color: var(--dark);
+  line-height: 24px;
+  font-size: var(--text-font);
+  margin-top: 50px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .aboutMe{
+    width: 90%;
+    height: calc(var(--nav-height)*12);
+    display: grid;
+    grid-template-rows: 50px 300px 500px;
+    gap:30px;
   }
-  
-  #skills {
-      background-color:  var(--secondary-color);
-      color: var(--dark);
+  .photoProfile{
+    width:calc(var(--nav-height)*3.5);
+    height: calc(var(--nav-height)*3.5);
+    margin:auto;
   }
+  .aboutMe p{
+    text-align: justify;
+  }
+  .hidden{
+    display: none;
+  }
+} 
+
+@media screen and (min-width: 768px) and (max-width:1200px) {
+  .hidden{
+    display: none;
+  }
+}
+.myWorkExperience
+    {
+      background-color: var( --primary-color);
+
+    }
+
+
+
+       /* Affichage reposnisive Joel pour la partie Experience /*/
+@media screen and (min-width: 900px) {
+  .flexBoxContainerExperiences
+        {
+          display:flex;
+          flex-direction: row;
+          justify-content:space-around;
+        }
+}
+@media  screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles pour cette Media Queries */
+  .flexBoxContainerExperiences
+      {
+        display:flex;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+      }
+  }
+
+    .myWorkExperience h2, h3
+    {
+      text-align: center;
+      color: var(--light);
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+    }
+
+
+    .myWorkExperience figcaption
+    {
+      color: var(--light);
+      font-size: var(---text-font-size);
+      font-family: var(--title-font);
+    }
+.conteneurRubriqueExperience
+{
+  text-align: center;
+}
+    .flexBoxContainerExperiences .experience{
+      height: 100%;
+      width:100;
+      }
+
+#experiences p,h2{
+  color: var(--light);
+}
+
+    /*Serdar*/
+
+  /*  @media screen and (min-width: 900px) {
+      .talents
+        {
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        }
+    }
+    @media  screen and (min-device-width : 450px) and (max-device-width : 900px) {
+      .talents
+        {
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        }
+      }
+      @media  screen and (min-device-width : 50px) and (max-device-width : 450px) {
+        .talents
+        {               
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        }
+        .talent {
+        width: 100px;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        }
+      }*/
+
+    #skills {
+        background-color: var(--secondary-color);        
+      }
   
-  .talents {
+    #skills h2, p, h3 {
+      color:var(--dark);
+    }
+  
+    .talents {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      shape-outside: circle();
-  }
+    }
+     
+    .talent {
+      background-color: white;
+      width:410px;
+      padding:5px;
+      margin:15px;
+      border-radius: 4px;
+      box-shadow: 0 0 5px var(--primary-color);      
+    }
   
-  .talent {
-      display: flex;
-      align-items: top;
-      width: 350px; 
-  }
+    .talent:hover {
+      transform: rotate(-5deg) scale(1.05);
+      background: url("./images/thumbtack.png") no-repeat white;
+      transition: transform .5s;
+      background-size: 30px;
+      background-position-x: 50%;
+    }
 
-  .talent-text {
+    .talents p {
+      color: var(--dark);
       text-align: justify;
+      padding: 5px;
+    }
+      
+    .talentimg {
+      float: left;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin:5px;
+      padding:5px;
+      transform: scale(0.9);
+    }
+  
+    /*.talentimg:hover {
+     transform: rotate(-25deg) scale(0.7);
+    }*/
+
+  
+/* CSS Assset part of Sév */
+#assets {
+  background-color:  var(--dark);
+  color: var(--light);
+  text-align: center;
+}
+
+.overlay{
+  background-image: url("./bgimages.png");
+  mix-blend-mode:luminosity;
+  display:inline-block;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+.weapon-text {
+  text-align: left;
+}
+
+
+#assets h2,p,h3{
+  color:var(--light);
+  font-size: var(--text-font-size);
+}
+.weapons {
+  display: grid;
+    grid: 500px 500px 500px/ auto auto;
+    gap: 50px;
+
+}
+
+
+
+/* Style from Form */
+
+.formContainer {
+  background-color: var(--secondary-color);
+}
+
+.formSet {
+  font-family: var(--text-font);
+}
+
+.formContainer h2 {
+  font-family: var(--title-font);
+  font-size: var(--title-font-size);
+  padding: var(--spacing-2) 0px;
+  color: var(--primary-color);
+  font-weight: var(--bold);
+}
+
+.formContainer p {
+  margin: 0px;
+  padding: var(--spacing-2) 0px;
+  color: var(--primary-color);
+}
+
+.formSet label {
+  display: block;
+  padding: var(--spacing) 0px var(--spacing) 0px;
+  color: var(--primary-color);
+}
+
+.formSet input {
+  width: 100%;
+}
+
+.formSet select {
+  width: 100%;
+}
+
+.formSet input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.formSet textarea {
+  resize: none;
+  width: 100%;
+  height: 200px;
+}
+
+.formSet textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.formSet input[type="submit"] {
+  max-width: 150px;
+  padding: var(--spacing);
+  text-align: center;
+  margin: 2% 40%;
+  background-color: #831b17;
+  color: var(--bannerTextColor);
+}
+
+.formSet input[type="submit"]:focus {
+  background-color: var(--bannerColor);
+}
+
+/* Styles for Footer */
+
+footer {
+  background-color: var(--bannerColor);
+  color: var(--bannerTextColor);
+  width: 100%;
+  max-height: 100px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footerContainer p {
+  font-size: 1em;
+  margin-top: var(--spacing);
+}
+
+.footerCopyright {
+  margin-top: 10px;
+  font-weight: var(--bold);
+}
+
+.footerContact p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.footerContact p:first-child {
+  margin-top: var(--spacing);
+}
+
+.footerIcon img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Responsivity settings for form and footer */
+  .formSet input[type="submit"] {
+    max-width: 150px;
+    padding: var(--spacing);
+    text-align: center;
+    margin: var(--spacing-2) var(--spacing-2) var(--spacing-2) 0px;
   }
 
-  .talent img {
-     width: 150px;
-     height: 150px;
-     object-fit: cover;
-     border-radius: 50%;
-     float:left;
-     shape-outside: circle();
+  .footerIcon img {
+    max-width: 30px;
+    max-height: 30px;
+    margin-top: 10px;
   }
- 
+}
