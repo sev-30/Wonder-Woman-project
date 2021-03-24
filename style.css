@@ -53,9 +53,11 @@
     h1 {
       
       font-size: var(--title-font-size);
-    
       font-family: var(--title-font);
-    
+    }
+
+    h2 {
+      text-transform: uppercase;
     }
     
     
@@ -314,6 +316,7 @@ text-shadow: 5px 5px 10px var(--dark), 5px 5px 1em var(--dark), 5px 5px 1em var(
       width:100;
       }
 
+
 #experiences p,h2{
   color: var(--light);
 }
@@ -323,6 +326,55 @@ text-shadow: 5px 5px 10px var(--dark), 5px 5px 1em var(--dark), 5px 5px 1em var(
     #skills {
       background-color: var(--secondary-color);
     }
+
+
+#experiences p,h2{
+  color: var(--light);
+}
+
+    /*Serdar*/
+
+  /*  @media screen and (min-width: 900px) {
+      .talents
+        {
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        }
+    }
+    @media  screen and (min-device-width : 450px) and (max-device-width : 900px) {
+      .talents
+        {
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        }
+      }
+      @media  screen and (min-device-width : 50px) and (max-device-width : 450px) {
+        .talents
+        {               
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        }
+        .talent {
+        width: 100px;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        }
+      }*/
+
+    #skills {
+        background-color: var(--secondary-color);        
+      }
+  
+    #skills h2, p, h3 {
+      color:var(--dark);
+    }
+  
 
     .talents {
       display: flex;
@@ -547,6 +599,16 @@ ol, li {
   text-align: center;
 }
 
+
+.overlay{
+  background-image: url("./bgimages.png");
+  mix-blend-mode:luminosity;
+  display:inline-block;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
 
 
 .weapon-text {
